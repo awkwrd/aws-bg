@@ -8,9 +8,13 @@ terraform {
     }
     tls = {
       source  = "hashicorp/tls"
-      version = "~> 4.0" # Use the latest version
+      version = "~> 4.0"
     }
   }
+}
+
+provider "aws" {
+  region = var.region
 }
 
 provider "tls" {}

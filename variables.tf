@@ -1,23 +1,23 @@
+variable "region" {
+  description = "The AWS region to deploy resources in."
+  type        = string
+  default     = "us-east-1"
+}
+
 variable "vpc_id" {
   description = "The ID of the pre-provisioned VPC."
   type        = string
+  default     = "vpc-07dca5b53ee29ccbf"
 }
 
-# variable "public_subnet_ids" {
-#   description = "The IDs of the pre-provisioned public subnets."
-#   type        = list(string)
-# }
-
 variable "blue_weight" {
-  description = "The traffic weight for the Blue Target Group. Specifies the percentage of traffic routed to the Blue environment."
+  description = "The traffic weight for the Blue Target Group."
   type        = number
-  default     = 30
 }
 
 variable "green_weight" {
-  description = "The traffic weight for the Green Target Group. Specifies the percentage of traffic routed to the Green environment."
+  description = "The traffic weight for the Green Target Group."
   type        = number
-  default     = 70
 }
 
 variable "blue_instance_type" {
@@ -32,7 +32,8 @@ variable "green_instance_type" {
   default     = "t2.micro"
 }
 
-variable "region" {
-  description = "The AWS region"
+variable "project_name" {
+  description = "The name of the project used for tagging and naming resources."
   type        = string
+  default     = "cmtr-fvj3554p"
 }
